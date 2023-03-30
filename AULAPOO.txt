@@ -1,0 +1,138 @@
+ //Definição das variéveis
+
+    $lampada_estado = false;
+    $lampada_potencia = 60;
+
+    //Função para ligar a lâmpada
+
+    function ligar_lampada(){
+        global $lampada_estado;
+        $lampada_estado = true;
+    }
+
+    //Função para desligar a lãmpada 
+    function desligar_lampada (){
+        global $lampada_estado;
+        $lampada_estado = false;
+    }
+
+    //Função para aumentar a potencia da lampada
+    function aumentar_potencia(){
+        global  $lampada_potencia;
+        $lampada_potencia += 20;
+    }
+
+    //Função para diminuir a potencia da lampada 
+    function diminuir_potencia(){
+        global $lampada_potencia;
+        $lampada_potencia -= 20;
+    }
+
+    //testando as funções
+
+    echo "Estado atual da lampada: " . ($lampada_estado ? "Ligada" : "Desligada") . "<br>";
+    echo "Potencia da lâmpada: " . ($lampada_potencia . "watts<br>");
+   
+    ligar_lampada();
+    aumentar_potencia();
+
+    echo "Estado atual da lampada: " . ($lampada_estado ? "Ligada" : "Desligada") . "<br>";
+    echo "Potencia atual da lampada: " . $lampada_potencia . " watts<br>";
+
+    diminuir_potencia();
+    desligar_lampada();
+
+    echo "Estado atual da lampada: " . ($lampada_estado ? "Ligada" : "Desligada") . "<br>";
+    echo "Potencia atual da lampada: " . $lampada_potencia . " watts<br>";
+
+--------------------------------------------------------------------------------------------------------------
+
+ //Declaração de variaveis
+
+    $olhos = "azul";
+    $cabelo = "castanho";
+    $usa_oculos = true;
+    $vestimenta = "calca jeans e blazer";
+    $segura_lampada = true;
+
+    //informações
+
+    echo "Essa pessoa possui olhos " . $olhos . ", cabelo " . $cabelo . "<br>";
+    if($usa_oculos){
+        echo "usa_oculos. <br>";
+    }else{
+        echo " não usa óculos. <br>";
+    }
+
+    echo "Está usando " . $vestimenta . " e ";
+    if($segura_lampada){
+        echo "está segurando uma lampada";
+    }else{
+        echo " não esta segurando nada";
+    }
+
+----------------------------------------------------------------------------------------------------------------
+
+<?php
+
+    class Pessoa {
+    public $olhos;
+    public $cabelo;
+    public $roupa;
+    public $usa_oculos;
+    public $objetoMao;
+
+    // metodo construtor
+    public function construct($olhos, $cabelo, $roupa,  $usa_oculos, $objetoMao, ) {
+       $this->olhos = $olhos;
+       $this->cabelo = $cabelo;
+       $this->usa_oculos = $usa_oculos;
+       $this->roupa = $roupa;
+       $this->objetoMao = $objetoMao;
+    }
+
+    //metodos getOlhos 
+    public function getOlhos (){
+        return $this->olhos;
+    }
+
+    public function getUsaOculos (){
+        return $this->usa_oculos;
+    }
+
+    public function getRoupa (){
+        return $this->roupa;
+    }
+
+    public function getObjetoMao (){
+        return $this->objetoMao;
+    }
+
+    public function getCabelo (){
+        return $this->cabelo;
+    }
+   
+    }
+
+    class Objeto {
+        private $tipo;
+
+        public function __construct ($tipo){
+            return $this->usa_oculos;
+        }
+    }
+
+
+    // definindo as propriedades do objeto
+
+    $pessoa1 = new Pessoa();
+    $pessoa1->olhos = "azul";
+    $pessoa1->cabelo = "castanho";
+    $pessoa1->usa_oculos = true;
+    $pessoa1->objetoMao = "relogio";
+    $pessoa1->roupa = "calca";
+
+    // chamando métodos do objeto
+    echo $pessoa1;
+
+    ?>
